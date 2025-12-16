@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "./designSystem.css";
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-orange-50 via-white to-red-50 min-h-screen;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Override with design system if needed */
+.btn-primary {
+  @apply bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden;
+}

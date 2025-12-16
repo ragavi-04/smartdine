@@ -1,0 +1,380 @@
+.allergy-filter {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.allergy-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.allergy-filter-header:hover {
+  background: linear-gradient(135deg, #ff5252 0%, #e84a5f 100%);
+}
+
+.allergy-filter-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.allergy-icon {
+  font-size: 1.5rem;
+}
+
+.active-count {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.expand-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.allergy-filter-content {
+  padding: 1.5rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.allergy-filter-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* Allergen Grid */
+.allergen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.allergen-checkbox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  text-align: center;
+}
+
+.allergen-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.allergen-checkbox:hover {
+  border-color: #ff6b6b;
+  background: #fff5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.15);
+}
+
+.allergen-checkbox.checked {
+  border-color: #ff6b6b;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
+}
+
+.allergen-checkbox .allergen-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.allergen-checkbox .allergen-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.check-mark {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+/* Custom Ingredient Section */
+.custom-ingredient-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.custom-label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.custom-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.custom-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover:not(:disabled) {
+  background: #ff5252;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+.add-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Custom Ingredients List */
+.custom-ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ingredient-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: white;
+  border: 2px solid #ff6b6b;
+  border-radius: 20px;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.remove-pill {
+  background: transparent;
+  border: none;
+  color: #ff6b6b;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.remove-pill:hover {
+  color: #ff5252;
+  transform: scale(1.2);
+}
+
+/* Active Filters Display */
+.active-filters-display {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #fff9e6;
+  border-left: 4px solid #ffa500;
+  border-radius: 8px;
+}
+
+.active-filters-label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.active-filters-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-tag {
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.allergen-tag {
+  background: #ff6b6b;
+  color: white;
+}
+
+.custom-tag {
+  background: #ffa500;
+  color: white;
+}
+
+/* Action Buttons */
+.allergy-filter-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.apply-button,
+.clear-button {
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.apply-button {
+  flex: 1;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+}
+
+.apply-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.apply-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.clear-button {
+  background: white;
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+}
+
+.clear-button:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .allergen-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .allergen-checkbox {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .allergen-checkbox .allergen-icon {
+    font-size: 1.5rem;
+  }
+
+  .allergen-checkbox .allergen-label {
+    font-size: 0.8rem;
+  }
+
+  .allergy-filter-actions {
+    flex-direction: column;
+  }
+
+  .apply-button,
+  .clear-button {
+    width: 100%;
+  }
+
+  .custom-input-group {
+    flex-direction: column;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .allergen-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .allergy-filter-content {
+    padding: 1rem;
+  }
+}
